@@ -9,14 +9,14 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.google.android.material.tabs.TabLayout;
+
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
-
-import com.google.android.material.tabs.TabLayout;
 
 public class MenuActivity extends AppCompatActivity {
 
@@ -26,6 +26,7 @@ public class MenuActivity extends AppCompatActivity {
     private Menu1Fragment menu1Fragment = new Menu1Fragment();
     private Menu2Fragment menu2Fragment = new Menu2Fragment();
     private Menu3Fragment menu3Fragment = new Menu3Fragment();
+    private Menu4Fragment menu4Fragment = new Menu4Fragment();
     FragmentTransaction transaction;
     TabLayout tabLayoutseason;
 
@@ -134,18 +135,20 @@ public class MenuActivity extends AppCompatActivity {
         switch (index) {
             case 0 :
                 transaction.replace(R.id.contents, menu1Fragment).commitAllowingStateLoss();
-                //tabLayoutseason.setVisibility(View.VISIBLE);
                 btnCam.setVisibility(View.VISIBLE);
                 break ;
             case 1 :
                 transaction.replace(R.id.contents, menu2Fragment).commitAllowingStateLoss();
-                //tabLayoutseason.setVisibility(View.VISIBLE);
                 btnCam.setVisibility(View.INVISIBLE);
                 break ;
 
             case 2:
                 transaction.replace(R.id.contents, menu3Fragment).commitAllowingStateLoss();
-                //tabLayoutseason.setVisibility(View.VISIBLE);
+                btnCam.setVisibility(View.INVISIBLE);
+                break ;
+
+            case 3:
+                transaction.replace(R.id.contents, menu4Fragment).commitAllowingStateLoss();
                 btnCam.setVisibility(View.INVISIBLE);
                 break ;
 

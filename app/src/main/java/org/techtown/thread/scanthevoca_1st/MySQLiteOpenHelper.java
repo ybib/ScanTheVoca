@@ -184,8 +184,6 @@ public class MySQLiteOpenHelper extends SQLiteOpenHelper {
         String query = sb.toString();
         query = query.replace("#WORD#",  voca.getWord() );
         db.execSQL(query);
-
-
     }
 
     public void onememo(Voca voca){
@@ -200,9 +198,18 @@ public class MySQLiteOpenHelper extends SQLiteOpenHelper {
         String query = sb.toString();
         query = query.replace("#NUM#",  voca.getNum() );
         db.execSQL(query);
+    }
+
+    public void reset(){
+
+        SQLiteDatabase db = getWritableDatabase();
+
+        StringBuffer sb = new StringBuffer();
+        sb.append("DELETE FROM my_voca ");
 
 
-
+        String query = sb.toString();
+        db.execSQL(query);
     }
 
 
