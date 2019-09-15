@@ -150,7 +150,7 @@ public class MenuActivity extends AppCompatActivity {
             case 3:
                 transaction.replace(R.id.contents, menu4Fragment).commitAllowingStateLoss();
                 btnCam.setVisibility(View.INVISIBLE);
-                break ;
+            break ;
 
 
             case 5 :
