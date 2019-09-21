@@ -17,15 +17,11 @@ import android.view.MotionEvent;
 import android.view.SurfaceView;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.ContextCompat;
 
 import com.pranavpandey.android.dynamic.utils.DynamicUnitUtils;
 
@@ -48,14 +44,23 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
+
 import static org.opencv.imgproc.Imgproc.COLOR_RGBA2GRAY;
 import static org.opencv.imgproc.Imgproc.GaussianBlur;
 import static org.opencv.imgproc.Imgproc.cvtColor;
 
 
+
+
+
 public class CamActivity extends AppCompatActivity
         implements CameraBridgeViewBase.CvCameraViewListener2, View.OnTouchListener{
 
+    private Button btnFlash;
     private ImageButton imgbtn;
     private static final String TAG = "opencv";
     private CameraBridgeViewBase mOpenCvCameraView;
@@ -159,6 +164,11 @@ public class CamActivity extends AppCompatActivity
         textView = findViewById(R.id.textView);
         textView.setMovementMethod(new ScrollingMovementMethod());
         textView.setVisibility(View.GONE);
+
+
+        //Flash Button--------------------------------------------------------------------------
+        btnFlash = (Button) findViewById(R.id.btnFlash);
+
 
 
         imgbtn = (ImageButton) findViewById(R.id.imageButton);

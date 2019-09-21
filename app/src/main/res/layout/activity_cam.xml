@@ -89,5 +89,11 @@
         android:visibility="gone"
         android:text="Barcode data = " />
 
+    <Button
+        android:id="@+id/btnFlash"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="FLASH"/>
+
 
 </FrameLayout>

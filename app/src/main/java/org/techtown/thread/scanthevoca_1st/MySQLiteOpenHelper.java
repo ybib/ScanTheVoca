@@ -111,7 +111,7 @@ public class MySQLiteOpenHelper extends SQLiteOpenHelper {
 
     public List<Voca> getAllVocas() {
         StringBuffer sb = new StringBuffer();
-        sb.append("SELECT _ID,WORD,MEAN,MEMO FROM my_voca");
+        sb.append("SELECT _ID,WORD,MEAN,MEMO FROM vocas");
         sb.append(" WHERE MEMO=1");
 
         SQLiteDatabase db = getReadableDatabase();
@@ -177,7 +177,7 @@ public class MySQLiteOpenHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = getWritableDatabase();
 
         StringBuffer sb = new StringBuffer();
-        sb.append("UPDATE my_voca ");
+        sb.append("UPDATE vocas ");
         sb.append("SET MEMO=0 ");
         sb.append("WHERE WORD='#WORD#'");
 
@@ -191,7 +191,7 @@ public class MySQLiteOpenHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = getWritableDatabase();
 
         StringBuffer sb = new StringBuffer();
-        sb.append("UPDATE my_voca ");
+        sb.append("UPDATE vocas ");
         sb.append("SET MEMO=1 ");
         sb.append("WHERE _ID=#NUM# AND MEMO = 0");
 
@@ -205,7 +205,7 @@ public class MySQLiteOpenHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = getWritableDatabase();
 
         StringBuffer sb = new StringBuffer();
-        sb.append("DELETE FROM my_voca ");
+        sb.append("DELETE FROM vocas ");
 
 
         String query = sb.toString();
